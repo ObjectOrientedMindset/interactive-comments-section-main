@@ -14,7 +14,11 @@ function Comment(props) {
   const [replyState, setReplyState] = useState(false);
 
   function editReply() {
-    setReplyState(true);
+    if(replyState){
+      setReplyState(false);
+    }else if(!replyState){
+      setReplyState(true);
+    }
   }
 
   useEffect(() => {
@@ -73,16 +77,17 @@ function Comment(props) {
       </div>
       {replyState ? (
         <ReplyComment
-          id={data.replies.length}
+          key={data.replies.length}
           commentId={data.id}
           replyingTo={data.user.username}
           updateApp={updateApp}
           updateComment={setReplyState}
+          isReply={false}
         />
       ) : undefined}
       {data.replies.map((reply) => {
         return (
-          <Reply data={reply} updateApp={updateApp} replyPaths={replyPaths} />
+          <Reply key={reply.id} data={reply} comment={data} updateApp={updateApp} replyPaths={replyPaths} />
         );
       })}
     </section>

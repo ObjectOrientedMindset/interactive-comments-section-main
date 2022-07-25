@@ -28,7 +28,7 @@ function SendComment(props) {
     document.getElementById("comment-input").value = text;
   }
   async function setData(data) {
-    const response = await Axios.post("http://localhost:5000/comments", data);
+    const response = await Axios.post("http://localhost:5001/comments", data);
     updateApp(response.data);
   }
 

@@ -1,7 +1,9 @@
 import Axios from "axios";
+import {useEffect} from "react";
+
 
 function ReplyComment(props) {
-  const { id, commentId, replyingTo, updateApp, updateComment } = props;
+  const { id, commentId, replyingTo, updateApp, updateComment, isReply } = props;
   const comment = {
     id: id,
     content: "",
@@ -32,11 +34,17 @@ function ReplyComment(props) {
   }
   async function setData(data) {
     const response = await Axios.post(
-      `http://localhost:5000/comments/${commentId}/replies`,
+      `http://localhost:5001/comments/${commentId}/replies`,
       data
     );
     updateApp(response.data);
   }
+
+  useEffect(() => {
+    if(isReply){
+      document.getElementById("send-container").style.width = "660px";
+    }
+  }, [])
 
   return (
     <section className="send-container">

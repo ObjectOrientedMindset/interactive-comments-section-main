@@ -9,7 +9,7 @@ function App() {
   const [data, setData] = useState({});
 
   const getData = async () => {
-    const response = await Axios.get("http://localhost:5000/api");
+    const response = await Axios.get("http://localhost:5001/api");
     const userData = await response.data;
     setData(userData);
     setLoading(false);
@@ -25,7 +25,7 @@ function App() {
   return (
     <div className="main-container">
       {data.comments.map((comment) => {
-        return <Comment data={comment} updateApp={setData} />;
+        return <Comment key={comment.id} data={comment} updateApp={setData} />;
       })}
       <SendComment data={data} updateApp={setData} />
     </div>

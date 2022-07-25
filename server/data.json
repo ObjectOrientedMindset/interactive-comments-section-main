@@ -22,35 +22,7 @@
       "replies": [
         {
           "id": 0,
-          "content": "@amyrobson Woah, your project looks awesome! How long have you been coding for? I'm still new, but think I want to dive into React as well soon. Perhaps you can give me an insight on where I can learn React? Thanks!",
-          "createdAt": "today",
-          "score": 0,
-          "replyingTo": "amyrobson",
-          "user": {
-            "image": {
-              "png": "./images/avatars/image-juliusomo.png",
-              "webp": "./images/avatars/image-juliusomo.webp"
-            },
-            "username": "juliusomo"
-          }
-        },
-        {
-          "id": 1,
-          "content": "@amyrobson",
-          "createdAt": "today",
-          "score": 0,
-          "replyingTo": "amyrobson",
-          "user": {
-            "image": {
-              "png": "./images/avatars/image-juliusomo.png",
-              "webp": "./images/avatars/image-juliusomo.webp"
-            },
-            "username": "juliusomo"
-          }
-        },
-        {
-          "id": 2,
-          "content": " wassup gurll",
+          "content": " Hey amy this is a reply attempt \ndont mind me!",
           "createdAt": "today",
           "score": 0,
           "replyingTo": "amyrobson",
@@ -107,24 +79,10 @@
         },
         {
           "id": 2,
-          "content": "@maxblagun Hello im just trying the reply feature, dont mind me :)",
+          "content": " firstly I would like to thank you,for sharing your opinion! this is a reply attempt ",
           "createdAt": "today",
           "score": 0,
-          "replyingTo": "maxblagun",
-          "user": {
-            "image": {
-              "png": "./images/avatars/image-juliusomo.png",
-              "webp": "./images/avatars/image-juliusomo.webp"
-            },
-            "username": "juliusomo"
-          }
-        },
-        {
-          "id": 3,
-          "content": " yo wassup ma boi",
-          "createdAt": "today",
-          "score": 0,
-          "replyingTo": "maxblagun",
+          "replyingTo": "ramsesmiron",
           "user": {
             "image": {
               "png": "./images/avatars/image-juliusomo.png",
@@ -134,34 +92,6 @@
           }
         }
       ]
-    },
-    {
-      "id": 2,
-      "content": "Add a comment....",
-      "createdAt": "today",
-      "score": 0,
-      "user": {
-        "image": {
-          "png": "./images/avatars/image-juliusomo.png",
-          "webp": "./images/avatars/image-juliusomo.webp"
-        },
-        "username": "juliusomo"
-      },
-      "replies": []
-    },
-    {
-      "id": 3,
-      "content": "Hello everyone!",
-      "createdAt": "today",
-      "score": 0,
-      "user": {
-        "image": {
-          "png": "./images/avatars/image-juliusomo.png",
-          "webp": "./images/avatars/image-juliusomo.webp"
-        },
-        "username": "juliusomo"
-      },
-      "replies": []
     }
   ]
 }

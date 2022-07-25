@@ -1,8 +1,20 @@
 import { useEffect, useState } from "react";
+import ReplyComment from "./ReplyComment"; 
 
 function Reply(props) {
-  const { data, updateApp, replyPaths } = props;
+  const { data, comment, updateApp, replyPaths } = props;
   const [isUser, setIsUser] = useState(false);
+  const [replyState, setReplyState] = useState(false);
+
+  function editReply() {
+    if(!isUser){
+      if(replyState){
+        setReplyState(false);
+      }else if(!replyState){
+        setReplyState(true);
+      }
+    }
+  }
 
   useEffect(() => {
     if (data.user.username === "juliusomo") {
@@ -10,7 +22,8 @@ function Reply(props) {
     }
   }, []);
   return (
-    <div className="_reply">
+    <section className="comments-container">
+          <div className="_reply">
       <hr />
       <section className="reply-container">
         <div className="upper-container">
@@ -46,7 +59,7 @@ function Reply(props) {
             src={replyPaths.get(data.user.username)}
             alt=""
           />
-          <p style={{ cursor: "pointer" }} className="reply-p">
+          <p onClick={editReply} style={{ cursor: "pointer" }} className="reply-p">
             {isUser ? "Edit" : "Reply"}
           </p>
         </div>
@@ -56,6 +69,20 @@ function Reply(props) {
         </p>
       </section>
     </div>
+   {replyState ?
+       <ReplyComment
+       id={comment.replies.length}
+       commentId={comment.id}
+       replyingTo={data.user.username}
+       updateApp={updateApp}
+       updateComment={setReplyState}
+       isReply={true}
+     />
+     :
+     undefined
+    }
+
+    </section>
   );
 }
 
