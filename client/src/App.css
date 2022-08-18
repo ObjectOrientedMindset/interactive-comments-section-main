@@ -1,62 +1,87 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Rubik:wght@400;500;700&display=swap');
-body{
+
+body {
   background-color: hsl(228, 33%, 97%);
   font-family: 'DM Sans', sans-serif;
   font-family: 'Rubik', sans-serif;
+  /* backdrop-filter: brightness(90%);
+  filter:brightness(80%); */
+  
 }
 
-.main-container{
+.delete-container{
+  position: absolute;
+  
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+
+  width: 500px;
+  height: 200px;
+  background-color: black;
+}
+
+.main-container {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.user-image{
+.user-image {
   height: 40px;
 }
-.comment-container{
+
+.comment-container {
   padding: 25px;
   background-color: white;
   margin-top: 20px;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
-  height:min-content;
+  height: min-content;
   width: 750px;
   min-height: 120px;
 }
-.send-container{
-  padding:20px;
+
+.send-container {
+  padding: 20px;
   background-color: white;
   margin-top: 20px;
   border-radius: 10px;
   display: flex;
   flex-direction: row;
-  width:760px;
+  width: 760px;
 }
-.comment-box{
+
+.comment-box {
   width: 600px;
   height: 100px;
   margin-left: 20px;
   border-radius: 10px;
 }
-.add-comment{
-  border: 1px solid hsl(228, 33%, 97%);;
+
+.add-comment {
+  border: 1px solid hsl(228, 33%, 97%);
+  ;
   width: 550px;
   height: 80px;
-  color:hsl(211, 10%, 45%);
+  color: hsl(211, 10%, 45%);
   padding: 10px;
 }
-.add{
+
+.add {
   position: relative;
   margin-top: -90px;
   margin-left: 15px;
   color: hsl(211, 10%, 45%);
 }
-.user{
+
+.user {
   color: hsl(212, 24%, 26%);
 }
-.send-button{
+
+.send-button {
   background-color: hsl(238, 40%, 52%);
   color: white;
   border: 0;
@@ -65,76 +90,85 @@ body{
   border-radius: 10px;
   margin-left: 10px;
 }
-.send-image{
+
+.send-image {
   height: 40px;
 }
-.score-container{
+
+.score-container {
   color: hsl(238, 40%, 52%);
   background-color: hsl(228, 33%, 97%);
   padding: 15px;
   border-radius: 10px;
 }
-#amyrobson{
+
+#amyrobson {
   margin-left: -4px;
 }
 
-.juliusomo{
+.juliusomo {
   margin-left: 5px;
   padding-left: 5px;
   background-color: hsl(238, 40%, 52%);
-  height:22px;
+  height: 22px;
   width: 35px;
-  color:white;
+  color: white;
   border-radius: 2px;
 }
 
-.upper-container{
+.upper-container {
   display: flex;
   flex-direction: row;
 }
-.user-image{
+
+.user-image {
   padding-left: 30px;
 
 }
-.title{
+
+.title {
   padding-left: 20px;
 }
 
-.createdAt{
-  color:hsl(211, 10%, 45%);
+.createdAt {
+  color: hsl(211, 10%, 45%);
 }
-.user{
+
+.user {
   font-weight: 700;
 }
 
-.reply{
+.reply {
   height: 13px;
   margin-top: 20px;
   margin-left: 20px;
 }
-.delete{
-  height:14px;
+
+.delete {
+  height: 14px;
   margin-top: 20px;
-  margin-left:auto;
+  margin-left: auto;
 }
 
-.reply-p{
+.reply-p {
   color: hsl(238, 40%, 52%);
   font-weight: 500;
   padding-left: 10px;
 }
 
-.delete-p{
-  color:hsl(358, 79%, 66%);
+.delete-p {
+  color: hsl(358, 79%, 66%);
   font-weight: 500;
   padding-left: 10px;
 }
-.comment-description{
+
+.comment-description {
   color: hsl(211, 10%, 45%);
   margin-left: 68px;
   margin-top: -70px;
 }
-.reply-container{
+
+.reply-container {
   padding: 25px;
   background-color: white;
   margin-top: 20px;
@@ -144,24 +178,32 @@ body{
   flex-direction: column;
   min-height: 120px;
   width: 700px;
+  max-width: 700px;
 }
 
-._reply{
+._reply {
   display: flex;
   flex-direction: row;
   max-width: 800px;
 }
 
-hr{
+hr {
   display: block;
   width: 1px;
   border-top: 1px;
 
-  margin:0;
+  margin: 0;
   margin-left: 44px;
   background-color: hsl(228, 33%, 97%);
 }
-span{
+
+span {
   font-weight: 700;
-  color:hsl(238, 40%, 52%);
+  color: hsl(238, 40%, 52%);
+}
+#update-btn{
+  margin-left: 565px;
+}
+#update-btn2{
+  margin-left: 475px;
 }

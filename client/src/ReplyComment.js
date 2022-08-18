@@ -1,9 +1,8 @@
 import Axios from "axios";
-import {useEffect} from "react";
-
+import { useEffect } from "react";
 
 function ReplyComment(props) {
-  const { id, commentId, replyingTo, updateApp, updateComment, isReply } = props;
+  const { id, commentId, replyingTo, updateApp, resize, updateComment } = props;
   const comment = {
     id: id,
     content: "",
@@ -23,7 +22,7 @@ function ReplyComment(props) {
     document.getElementById("comment-input").style.fontSize = "16px";
   }
   function getText() {
-    updateComment(false);
+    updateComment();
     let word = "@" + replyingTo;
     let element = document.getElementById("comment-input").value;
     let text = element.replace(word, "");
@@ -34,20 +33,25 @@ function ReplyComment(props) {
   }
   async function setData(data) {
     const response = await Axios.post(
-      `http://localhost:5001/comments/${commentId}/replies`,
+      `http://localhost:5001/set/comments/${commentId}/replies`,
       data
     );
     updateApp(response.data);
   }
 
   useEffect(() => {
-    if(isReply){
-      document.getElementById("send-container").style.width = "660px";
+    if (resize) {
+      document.getElementById("send-container-id").style.marginLeft = "87px";
+      document.getElementById("send-container-id").style.width = "673px";
+      document.getElementById("comment-input").style.width = "480px";
     }
-  }, [])
+  }, []);
 
   return (
-    <section className="send-container">
+    <section
+      id={resize ? "send-container-id" : undefined}
+      className="send-container"
+    >
       <img
         className="send-image"
         src="./images/avatars/image-juliusomo.png"
