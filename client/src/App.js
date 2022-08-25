@@ -35,7 +35,6 @@ function App() {
         );
       })}
       <SendComment data={data} updateApp={setData} />
-      <section className="delete-container"></section>
     </div>
   );
 }

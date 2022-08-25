@@ -3,11 +3,34 @@ import Axios from "axios";
 import ReplyComment from "./ReplyComment";
 
 function Reply(props) {
-  const { data, reply, comment, updateApp, replyPaths, replyHoverPaths } =
+  const { data, reply, comment, updateApp, replyPaths, replyHoverPaths, commentDeleteState } =
     props;
   const [isUser, setIsUser] = useState(false);
   const [replyState, setReplyState] = useState(false);
   const [editState, setEditState] = useState(false);
+  const [deleteState, setDeleteState] = useState(false);
+  const [message, setMessage] = useState("@" + reply.replyingTo + reply.content);
+
+  const yes = () => {
+    const indexComment = data.comments.indexOf(comment);
+    if (indexComment > -1) {
+      const indexReply = data.comments[indexComment].replies.indexOf(reply);
+      if (indexReply > -1) {
+        data.comments[indexComment].replies.splice(indexReply, 1);
+        for (let i = 0; i < data.comments[indexComment].replies.length; i++) {
+          data.comments[indexComment].replies.id = i;
+        }
+      }
+    }
+    setData(data);
+    setDeleteState(true);
+  }
+
+  const cancel = () => {
+    setDeleteState(false);
+  }
+
+
   function editReply() {
     if (isUser) {
       if (editState) {
@@ -31,6 +54,10 @@ function Reply(props) {
       }
     }
   }
+  const handleMessageChange = event => {
+    setMessage(event.target.value);
+  };
+
   const edit = () => {
     let word = "@" + reply.replyingTo;
     let element = document.getElementById("edit-text").value;
@@ -46,11 +73,7 @@ function Reply(props) {
       }
     });
     setData(data);
-    if (editState) {
-      setEditState(false);
-    } else if (!editState) {
-      setEditState(true);
-    }
+    editReply();
   };
   function scoreIncrement() {
     data.comments.forEach((element) => {
@@ -78,17 +101,13 @@ function Reply(props) {
   }
 
   function deleteReply() {
-    const indexComment = data.comments.indexOf(comment);
-    if (indexComment > -1) {
-      const indexReply = data.comments[indexComment].replies.indexOf(reply);
-      if (indexReply > -1) {
-        data.comments[indexComment].replies.splice(indexReply, 1);
-        for (let i = 0; i < data.comments[indexComment].replies.length; i++) {
-          data.comments[indexComment].replies.id = i;
-        }
+    if(!commentDeleteState){
+      if(deleteState){
+        setDeleteState(false);
+      }else if(!deleteState){
+        setDeleteState(true);
       }
     }
-    setData(data);
   }
 
   async function setData(data) {
@@ -160,7 +179,7 @@ function Reply(props) {
           </div>
           <p className="comment-description">
             {editState ? (
-              <textarea name="" id="edit-text" cols="78" rows="8">
+              <textarea name="edit" value={message} id="edit-text" className="add-comment" onChange={handleMessageChange}>
                 {"@" + reply.replyingTo + " " + reply.content}
               </textarea>
             ) : (
@@ -191,6 +210,16 @@ function Reply(props) {
           resize={true}
         />
       ) : undefined}
+      {deleteState ? (
+        <section className="delete-container">
+        <h1 className="delete-confir h">Delete Comment</h1>
+        <p className="delete-confir p">Are you sure you want to delete this comment ? This will remove the comment and can't be undone.</p>
+        <button onClick={cancel} className="delete-confir no">NO, CANCEL</button>
+        <button onClick={yes} className="delete-confir yes">YES, DELETE</button>
+      </section>
+      )
+      : undefined
+      }
     </section>
   );
 }

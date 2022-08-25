@@ -20,6 +20,29 @@ function Comment(props) {
   const [isUser, setIsUser] = useState(false);
   const [replyState, setReplyState] = useState(false);
   const [editState, setEditState] = useState(false);
+  const [deleteState, setDeleteState] = useState(false);
+  const [message, setMessage] = useState(comment.content);
+
+
+  const handleMessageChange = event => {
+    setMessage(event.target.value);
+  };
+
+  const yes = () => {
+    setDeleteState(true);
+    const index = data.comments.indexOf(comment);
+    if (index > -1) {
+      data.comments.splice(index, 1);
+      for (let i = 0; i < data.comments.length; i++) {
+        data.comments[i].id = i;
+      }
+    }
+    setData(data);
+  }
+
+  const cancel = () => {
+    setDeleteState(false);
+  }
 
   function editReply() {
     if (isUser) {
@@ -53,21 +76,29 @@ function Comment(props) {
       }
     });
     setData(data);
-    if (editState) {
-      setEditState(false);
-    } else if (!editState) {
-      setEditState(true);
-    }
+    editReply();
   }
   function deleteComment() {
-    const index = data.comments.indexOf(comment);
-    if (index > -1) {
-      data.comments.splice(index, 1);
-      for (let i = 0; i < data.comments.length; i++) {
-        data.comments[i].id = i;
+    if(deleteState){
+      setDeleteState(false);
+    }else if(!deleteState){
+      setDeleteState(true);
+    }
+
+    let elements = document.getElementsByTagName("*");
+    let deleteElements = document.getElementsByClassName("delete-confir"); 
+    console.log(deleteElements.length);
+    console.log(elements[0]);
+    for (let i = 0; i < elements.length; i++) {
+      for (let j = 0; j < deleteElements.length; j++){
+        if(elements[i] != deleteElements[j]){
+          elements[i].style.filter = "grayscale(0.20)";
+          console.log("success");
+        }
       }
     }
-    setData(data);
+    
+    
   }
   function scoreIncrement() {
     data.comments.forEach((element) => {
@@ -99,7 +130,7 @@ function Comment(props) {
 
   return (
     <section className="comments-container">
-      <div className="comment-container">
+      <div id={"comment-id" + comment.id} className="comment-container">
         <div className="upper-container">
           <div className="score-container">
             <img
@@ -156,7 +187,7 @@ function Comment(props) {
         </div>
         <p className="comment-description">
           {editState ? (
-            <textarea name="" id="edit-text" cols="90" rows="8">
+            <textarea name="edit" value={message} onChange={handleMessageChange} id="edit-text" className="edit-comment">
               {comment.content}
             </textarea>
           ) : (
@@ -185,19 +216,30 @@ function Comment(props) {
           resize={false}
         />
       ) : undefined}
-      {comment.replies.map((reply) => {
+      {comment.replies.map((element) => {
         return (
           <Reply
-            key={reply.id}
+            key={element.id}
             data={data}
-            reply={reply}
+            reply={element}
             comment={comment}
             updateApp={updateApp}
             replyPaths={replyPaths}
             replyHoverPaths={replyHoverPaths}
+            commentDeleteState={deleteState}
           />
         );
       })}
+      {deleteState ? (
+        <section className="delete-container">
+        <h1 className="delete-confir h">Delete Comment</h1>
+        <p className="delete-confir p">Are you sure you want to delete this comment ? This will remove the comment and can't be undone.</p>
+        <button onClick={cancel} className="delete-confir no">NO, CANCEL</button>
+        <button onClick={yes} className="delete-confir yes">YES, DELETE</button>
+      </section>
+      )
+      : undefined
+      }
     </section>
   );
 }

@@ -4,22 +4,46 @@ body {
   background-color: hsl(228, 33%, 97%);
   font-family: 'DM Sans', sans-serif;
   font-family: 'Rubik', sans-serif;
-  /* backdrop-filter: brightness(90%);
-  filter:brightness(80%); */
-  
 }
 
 .delete-container{
   position: absolute;
-  
   left: 0;
   right: 0;
   margin-left: auto;
   margin-right: auto;
+  top:50%;
+  width: 360px;
+  height: 225px;
+  background-color: white;
+  border-radius: 10px;
+}
 
-  width: 500px;
-  height: 200px;
-  background-color: black;
+.delete-confir{
+  margin:20px;
+
+}
+.no{
+  margin:0;
+  margin-left: 20px;
+  height: 40px;
+  width:150px;
+  border-radius: 7px;
+  background-color: hsl(211, 10%, 45%);
+  border:0;
+  color:white;
+  font-weight: 700;
+}
+.yes{
+  margin:0;
+  margin-left:20px;
+  height: 40px;
+  width:150px;
+  border-radius: 7px;
+  border:0;
+  background-color: hsl(358, 79%, 66%);
+  color:white;
+  font-weight: 700;
 }
 
 .main-container {
@@ -63,12 +87,19 @@ body {
 
 .add-comment {
   border: 1px solid hsl(228, 33%, 97%);
-  ;
   width: 550px;
   height: 80px;
   color: hsl(211, 10%, 45%);
   padding: 10px;
 }
+.edit-comment {
+  border: 1px solid hsl(228, 33%, 97%);
+  width: 650px;
+  height: 80px;
+  color: hsl(211, 10%, 45%);
+  padding: 10px;
+}
+
 
 .add {
   position: relative;
