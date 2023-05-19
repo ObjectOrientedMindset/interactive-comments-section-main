@@ -22,6 +22,7 @@ function Comment(props) {
   const [editState, setEditState] = useState(false);
   const [deleteState, setDeleteState] = useState(false);
   const [message, setMessage] = useState(comment.content);
+  const [isVisible, setIsVisible] = useState(false);
 
 
   const handleMessageChange = event => {
@@ -30,6 +31,7 @@ function Comment(props) {
 
   const yes = () => {
     setDeleteState(true);
+    setIsVisible(true);
     const index = data.comments.indexOf(comment);
     if (index > -1) {
       data.comments.splice(index, 1);
@@ -41,32 +43,30 @@ function Comment(props) {
   }
 
   const cancel = () => {
+    setIsVisible(false);
     setDeleteState(false);
   }
 
   function editReply() {
-    if (isUser) {
       if (editState) {
-        document.getElementById("comment-id" + comment.id).style.color =
+        document.getElementById("comment-id" + comment.user.username + comment.id).style.color =
           "hsl(238, 40%, 52%)";
         setEditState(false);
       } else if (!editState) {
-        document.getElementById("comment-id" + comment.id).style.color =
+        document.getElementById("comment-id" + comment.user.username + comment.id).style.color =
           "hsl(239, 57%, 85%)";
         setEditState(true);
       }
-    } else if (!isUser) {
       if (replyState) {
-        document.getElementById("comment-id" + comment.id).style.color =
+        document.getElementById("comment-id" + comment.user.username + comment.id).style.color =
           "hsl(238, 40%, 52%)";
         setReplyState(false);
       } else if (!replyState) {
-        document.getElementById("comment-id" + comment.id).style.color =
+        document.getElementById("comment-id" + comment.user.username + comment.id).style.color =
           "hsl(239, 57%, 85%)";
         setReplyState(true);
       }
     }
-  }
 
   function edit() {
     const text = document.getElementById("edit-text").value;
@@ -79,25 +79,16 @@ function Comment(props) {
     editReply();
   }
   function deleteComment() {
+    const rootElement = document.documentElement;
+    const deleteBox = document.querySelector(".delete-container");
+       
     if(deleteState){
+      setIsVisible(false);
       setDeleteState(false);
     }else if(!deleteState){
+      setIsVisible(true);
       setDeleteState(true);
-    }
-
-    let elements = document.getElementsByTagName("*");
-    let deleteElements = document.getElementsByClassName("delete-confir"); 
-    console.log(deleteElements.length);
-    console.log(elements[0]);
-    for (let i = 0; i < elements.length; i++) {
-      for (let j = 0; j < deleteElements.length; j++){
-        if(elements[i] != deleteElements[j]){
-          elements[i].style.filter = "grayscale(0.20)";
-          console.log("success");
-        }
-      }
-    }
-    
+    }     
     
   }
   function scoreIncrement() {
@@ -177,7 +168,7 @@ function Comment(props) {
             alt=""
           ></img>
           <p
-            id={"comment-id" + comment.id}
+            id={"comment-id" + comment.user.username + comment.id}
             onClick={editReply}
             style={{ cursor: "pointer" }}
             className="reply-p"
@@ -230,16 +221,12 @@ function Comment(props) {
           />
         );
       })}
-      {deleteState ? (
-        <section className="delete-container">
+        <section id="dk" className="delete-container" style={{visibility: isVisible ? 'visible' : 'hidden'}}>
         <h1 className="delete-confir h">Delete Comment</h1>
         <p className="delete-confir p">Are you sure you want to delete this comment ? This will remove the comment and can't be undone.</p>
         <button onClick={cancel} className="delete-confir no">NO, CANCEL</button>
         <button onClick={yes} className="delete-confir yes">YES, DELETE</button>
       </section>
-      )
-      : undefined
-      }
     </section>
   );
 }

@@ -12,9 +12,10 @@ function App() {
     const response = await Axios.get("http://localhost:5001/get");
     const userData = await response.data;
     setData(userData);
-    setLoading(false);
-  };
-
+    setLoading(false);   
+    
+  } 
+  
   useEffect(() => {
     getData();
   }, []);
@@ -24,7 +25,8 @@ function App() {
   }
   return (
     <div className="main-container">
-      {data.comments.map((comment) => {
+      {data.comments.sort((a, b) => a.score < b.score ? 1 : -1)
+      .map((comment) => {
         return (
           <Comment
             key={comment.id}

@@ -6,13 +6,15 @@ body {
   font-family: 'Rubik', sans-serif;
 }
 
-.delete-container{
-  position: absolute;
+
+
+.delete-container {
+  position: fixed;
   left: 0;
   right: 0;
   margin-left: auto;
   margin-right: auto;
-  top:50%;
+  top: 50%;
   width: 360px;
   height: 225px;
   background-color: white;
@@ -21,7 +23,6 @@ body {
 
 .delete-confir{
   margin:20px;
-
 }
 .no{
   margin:0;

@@ -3,6 +3,7 @@ import { useEffect } from "react";
 
 function ReplyComment(props) {
   const { id, commentId, replyingTo, updateApp, resize, updateComment } = props;
+
   const comment = {
     id: id,
     content: "",

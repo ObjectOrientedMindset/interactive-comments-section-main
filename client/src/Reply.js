@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import Axios from "axios";
 import ReplyComment from "./ReplyComment";
 
-function Reply(props) {
+function Reply(props) 
+{
   const { data, reply, comment, updateApp, replyPaths, replyHoverPaths, commentDeleteState } =
     props;
   const [isUser, setIsUser] = useState(false);
@@ -34,26 +35,26 @@ function Reply(props) {
   function editReply() {
     if (isUser) {
       if (editState) {
-        document.getElementById("reply-id" + reply.id).style.color =
+        document.getElementById("reply-id" + reply.user.username + reply.id).style.color =
           "hsl(238, 40%, 52%)";
         setEditState(false);
       } else if (!editState) {
-        document.getElementById("reply-id" + reply.id).style.color =
+        document.getElementById("reply-id" + reply.user.username + reply.id).style.color =
           "hsl(239, 57%, 85%)";
         setEditState(true);
-      }
+      } 
     } else if (!isUser) {
       if (replyState) {
-        document.getElementById("reply-id" + reply.id).style.color =
+        document.getElementById("reply-id" + reply.user.username + reply.id).style.color =
           "hsl(238, 40%, 52%)";
         setReplyState(false);
       } else if (!replyState) {
-        document.getElementById("reply-id" + reply.id).style.color =
+        document.getElementById("reply-id" + reply.user.username + reply.id).style.color =
           "hsl(239, 57%, 85%)";
         setReplyState(true);
       }
     }
-  }
+}
   const handleMessageChange = event => {
     setMessage(event.target.value);
   };
@@ -169,7 +170,7 @@ function Reply(props) {
               alt=""
             />
             <p
-              id={"reply-id" + reply.id}
+              id={"reply-id" + reply.user.username + reply.id}
               onClick={editReply}
               style={{ cursor: "pointer" }}
               className="reply-p"
@@ -224,4 +225,9 @@ function Reply(props) {
   );
 }
 
+
 export default Reply;
+
+
+
+
