@@ -109,7 +109,7 @@ function Comment(props) {
   }
 
   async function setData(data) {
-    const response = await Axios.post("http://localhost:5001/set", data);
+    const response = await Axios.post("https://interactive-comments-server.onrender.com/set", data);
     updateApp(response.data);
   }
 

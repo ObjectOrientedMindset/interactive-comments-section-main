@@ -34,7 +34,7 @@ function ReplyComment(props) {
   }
   async function setData(data) {
     const response = await Axios.post(
-      `http://localhost:5001/set/comments/${commentId}/replies`,
+      `https://interactive-comments-server.onrender.com/set/comments/${commentId}/replies`,
       data
     );
     updateApp(response.data);

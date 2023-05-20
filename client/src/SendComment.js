@@ -29,7 +29,7 @@ function SendComment(props) {
   }
   async function setData(data) {
     const response = await Axios.post(
-      "http://localhost:5001/set/comments",
+      "https://interactive-comments-server.onrender.com/set/comments",
       data
     );
     updateApp(response.data);
