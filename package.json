@@ -1,0 +1,24 @@
+{
+  "name": "interactive-comments-section-main",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "install-server": "cd server && npm install",
+    "start-server": "cd server && node server.js",
+    "install-client": "cd client && npm install",
+    "build-client": "cd client && npm run build",
+    "start-client": "cd client && npm run start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ObjectOrientedMindset/interactive-comments-section-main.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ObjectOrientedMindset/interactive-comments-section-main/issues"
+  },
+  "homepage": "https://github.com/ObjectOrientedMindset/interactive-comments-section-main#readme"
+}
