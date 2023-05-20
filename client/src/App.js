@@ -13,7 +13,6 @@ function App() {
     const userData = await response.data;
     setData(userData);
     setLoading(false);   
-    
   } 
   
   useEffect(() => {
@@ -27,14 +26,16 @@ function App() {
     <div className="main-container">
       {data.comments.sort((a, b) => a.score < b.score ? 1 : -1)
       .map((comment) => {
+        var i = 0;
         return (
           <Comment
-            key={comment.id}
+            key={i}
             comment={comment}
             data={data}
             updateApp={setData}
           />
         );
+        i++;
       })}
       <SendComment data={data} updateApp={setData} />
     </div>

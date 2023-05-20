@@ -11,7 +11,7 @@
       "id": 0,
       "content": "Impressive! Though it seems the drag feature could be improved. But overall it looks incredible. You've nailed the design and the responsiveness at various breakpoints works really well...",
       "createdAt": "1 month ago",
-      "score": 15,
+      "score": 17,
       "user": {
         "image": {
           "png": "./images/avatars/image-amyrobson.png",
@@ -21,10 +21,52 @@
       },
       "replies": [
         {
-          "id": 0,
-          "content": " reply test.",
+          "id": 1,
+          "content": " asdasdsa",
           "createdAt": "today",
-          "score": 8,
+          "score": 1,
+          "replyingTo": "amyrobson",
+          "user": {
+            "image": {
+              "png": "./images/avatars/image-juliusomo.png",
+              "webp": "./images/avatars/image-juliusomo.webp"
+            },
+            "username": "juliusomo"
+          }
+        },
+        {
+          "id": 2,
+          "content": " test",
+          "createdAt": "today",
+          "score": 0,
+          "replyingTo": "amyrobson",
+          "user": {
+            "image": {
+              "png": "./images/avatars/image-juliusomo.png",
+              "webp": "./images/avatars/image-juliusomo.webp"
+            },
+            "username": "juliusomo"
+          }
+        },
+        {
+          "id": 3,
+          "content": " test",
+          "createdAt": "today",
+          "score": 0,
+          "replyingTo": "amyrobson",
+          "user": {
+            "image": {
+              "png": "./images/avatars/image-juliusomo.png",
+              "webp": "./images/avatars/image-juliusomo.webp"
+            },
+            "username": "juliusomo"
+          }
+        },
+        {
+          "id": 4,
+          "content": " bfdvfc",
+          "createdAt": "today",
+          "score": 0,
           "replyingTo": "amyrobson",
           "user": {
             "image": {
@@ -40,7 +82,7 @@
       "id": 1,
       "content": "Woah, your project looks awesome! How long have you been coding for? I'm still new, but think I want to dive into React as well soon. Perhaps you can give me an insight on where I can learn React? Thanks!",
       "createdAt": "2 weeks ago",
-      "score": 14,
+      "score": 16,
       "user": {
         "image": {
           "png": "./images/avatars/image-maxblagun.png",
@@ -64,11 +106,39 @@
           }
         },
         {
+          "id": 1,
+          "content": " test",
+          "createdAt": "today",
+          "score": 0,
+          "replyingTo": "maxblagun",
+          "user": {
+            "image": {
+              "png": "./images/avatars/image-juliusomo.png",
+              "webp": "./images/avatars/image-juliusomo.webp"
+            },
+            "username": "juliusomo"
+          }
+        },
+        {
           "id": 2,
-          "content": " reply to a reply is working !\n",
+          "content": " test",
           "createdAt": "today",
           "score": 0,
           "replyingTo": "ramsesmiron",
+          "user": {
+            "image": {
+              "png": "./images/avatars/image-juliusomo.png",
+              "webp": "./images/avatars/image-juliusomo.webp"
+            },
+            "username": "juliusomo"
+          }
+        },
+        {
+          "id": 4,
+          "content": " fdgfdg",
+          "createdAt": "today",
+          "score": 0,
+          "replyingTo": "amyrobson",
           "user": {
             "image": {
               "png": "./images/avatars/image-juliusomo.png",
@@ -81,9 +151,9 @@
     },
     {
       "id": 2,
-      "content": "Add a comment....dsfafas",
+      "content": "Add a comment....",
       "createdAt": "today",
-      "score": 0,
+      "score": 4,
       "user": {
         "image": {
           "png": "./images/avatars/image-juliusomo.png",
@@ -95,9 +165,37 @@
     },
     {
       "id": 3,
-      "content": "Add a comment....",
+      "content": "TestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTest\nTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTest\nTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTest\nTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTest\nTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTest\nTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTest\nTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTest\nTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTest\n",
+      "createdAt": "today",
+      "score": 2,
+      "user": {
+        "image": {
+          "png": "./images/avatars/image-juliusomo.png",
+          "webp": "./images/avatars/image-juliusomo.webp"
+        },
+        "username": "juliusomo"
+      },
+      "replies": []
+    },
+    {
+      "id": 4,
+      "content": "TestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTest\nTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTest\nTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTest\nTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTest\nTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTest\nTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTest\nTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTest\nTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTest",
       "createdAt": "today",
       "score": 1,
+      "user": {
+        "image": {
+          "png": "./images/avatars/image-juliusomo.png",
+          "webp": "./images/avatars/image-juliusomo.webp"
+        },
+        "username": "juliusomo"
+      },
+      "replies": []
+    },
+    {
+      "id": 5,
+      "content": "TestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTest\nTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTest\nTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTest\nTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTest\nTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTest\nTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTest\nTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTest\nTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTest",
+      "createdAt": "today",
+      "score": 0,
       "user": {
         "image": {
           "png": "./images/avatars/image-juliusomo.png",

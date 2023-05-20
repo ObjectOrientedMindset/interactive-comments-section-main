@@ -48,24 +48,24 @@ function Comment(props) {
   }
 
   function editReply() {
-      if (editState) {
-        document.getElementById("comment-id" + comment.user.username + comment.id).style.color =
-          "hsl(238, 40%, 52%)";
-        setEditState(false);
-      } else if (!editState) {
-        document.getElementById("comment-id" + comment.user.username + comment.id).style.color =
-          "hsl(239, 57%, 85%)";
-        setEditState(true);
-      }
-      if (replyState) {
-        document.getElementById("comment-id" + comment.user.username + comment.id).style.color =
-          "hsl(238, 40%, 52%)";
-        setReplyState(false);
-      } else if (!replyState) {
-        document.getElementById("comment-id" + comment.user.username + comment.id).style.color =
-          "hsl(239, 57%, 85%)";
-        setReplyState(true);
-      }
+
+    if (replyState) {
+      document.getElementById("comment-id" + comment.user.username + comment.id).style.color =
+        "hsl(238, 40%, 52%)";
+      setReplyState(false);
+    } else if (!replyState) {
+      document.getElementById("comment-id" + comment.user.username + comment.id).style.color =
+        "hsl(239, 57%, 85%)";
+      setReplyState(true);
+    } else if (editState) {
+      document.getElementById("comment-id" + comment.user.username + comment.id).style.color =
+        "hsl(238, 40%, 52%)";
+      setEditState(false);
+    } else if (!editState) {
+      document.getElementById("comment-id" + comment.user.username + comment.id).style.color =
+        "hsl(239, 57%, 85%)";
+      setEditState(true);
+    }
     }
 
   function edit() {
