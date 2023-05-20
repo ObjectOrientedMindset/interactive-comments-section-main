@@ -9,7 +9,7 @@ function App() {
   const [data, setData] = useState({});
 
   const getData = async () => {
-    const response = await Axios.get("http://localhost:5001/get");
+    const response = await Axios.get("https://interactive-comments-server.onrender.com");
     const userData = await response.data;
     setData(userData);
     setLoading(false);   
