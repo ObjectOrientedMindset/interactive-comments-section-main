@@ -4,9 +4,14 @@ const path = require("path");
 let data = require("./data.json");
 const cors = require("cors");
 
+// middleware
+const corsOptions = {
+  origin: "http://localhost:3000" // frontend URI (ReactJS)
+}
+
 const app = express();
 app.use(express.json());
-app.use(cors());
+app.use(cors(corsOptions));
 
 const saveData = async (_data) => {
   try {
