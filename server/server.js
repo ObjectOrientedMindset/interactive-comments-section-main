@@ -6,7 +6,7 @@ const cors = require("cors");
 
 // middleware
 const corsOptions = {
-  origin: "http://localhost:3000" // frontend URI (ReactJS)
+  origin: "https://interactive-comments-client.onrender.com" // frontend URI (ReactJS)
 }
 
 const app = express();
